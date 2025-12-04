@@ -3,40 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Peter's Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-            </ul>
+    <header class="vintage-header">
+        <div class="header-content">
+            <h1>Peter's Portfolio</h1>
+            <p class="tagline">Developer & Creative Thinker</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="resume.html" class="nav-link">Resume</a>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Hello, I'm [Your Name]</h1>
-            <p>Web Developer | Designer | [Your Profession]</p>
+    <main class="container">
+        <!-- Profile Section with Picture -->
+        <section class="profile-section">
+            <img src="assets/images/IMG_5156.JPEG" alt="Peter's Profile Picture" class="profile-picture" id="profile-pic">
+            <h2>Hi, I'm Peter</h2>
+            <p class="intro-text">Passionate developer creating elegant solutions to complex problems</p>
         </section>
 
-        <section class="about">
-            <h2>About Me</h2>
-            <p>Welcome to my personal website! I'm a passionate developer who loves creating beautiful and functional websites.</p>
-            <!-- Add more about yourself here -->
-        </section>
+        <!-- Tabbed Interface -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" data-tab="about">About Me</button>
+                <button class="tab" data-tab="skills">Skills</button>
+                <button class="tab" data-tab="projects">Projects</button>
+                <button class="tab" data-tab="contact">Contact</button>
+            </div>
+            
+            <div class="tab-content active" id="about-tab">
+                <h2>Welcome to My Digital Space</h2>
+                <p>Hello! I'm Peter, a passionate developer with a love for creating elegant solutions to complex problems. This is my corner of the internet where I share my journey, projects, and thoughts.</p>
+                <p>With a keen eye for detail and a passion for technology, I strive to build meaningful digital experiences. My journey in tech has been driven by curiosity and a constant desire to learn and grow.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, reading, or enjoying the outdoors.</p>
+                <a href="resume.html" class="btn" style="margin-top: 1rem;">View My Resume</a>
+            </div>
+            
+            <div class="tab-content" id="skills-tab">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>React.js, Vue.js</li>
+                            <li>Responsive Design</li>
+                            <li>UI/UX Principles</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Node.js, Express</li>
+                            <li>Python, Django</li>
+                            <li>RESTful APIs</li>
+                            <li>Database Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="projects-tab">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Project One</h3>
+                        <p>Description of project one and the technologies used.</p>
+                        <a href="#" class="btn btn-small">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Two</h3>
+                        <p>Description of project two and the technologies used.</p>
+                        <a href="#" class="btn btn-small">View Project</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="btn" style="margin-top: 1.5rem;">View All Projects</a>
+            </div>
+            
+            <div class="tab-content" id="contact-tab">
+                <h2>Get In Touch</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p><strong>Location:</strong> Your Location</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/pkeel" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <!-- Add more social links as needed -->
+    <footer class="vintage-footer">
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Peter. All rights reserved.</p>
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <!-- <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a> -->
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
