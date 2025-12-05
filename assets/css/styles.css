@@ -31,8 +31,8 @@ nav {
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--shadow);
@@ -72,7 +72,6 @@ nav {
 }
 
 
-
 .nav-bird {
   width: 40px;
   height: auto;
@@ -80,11 +79,11 @@ nav {
   margin-left: 15px;
   vertical-align: top;
   margin-top: -15px; /* Higher up */
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;  /* Shows it's clickable */
 }
 
-.bird {
-  display: none;
-}
+
 
 
 @keyframes hop {
